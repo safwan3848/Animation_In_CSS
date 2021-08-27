@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Safwan product</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+      charset="UTF-8"
+    ></script>
+  </head>
+
+  <body>
+    <div class="product-card">
+      <h1>origninal shoes</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+      <div class="product-pic"></div>
+      <div class="product-colors">
+        <span
+          class="blue active"
+          data-color="#2980b9"
+          data-pic="url(shoes-1.png)"
+        ></span>
+        <span
+          class="green"
+          data-color="#2ecc71"
+          data-pic="url(shoes-2.png)"
+        ></span>
+        <span
+          class="yellow"
+          data-color="#f1c40f"
+          data-pic="url(shoes-3.png)"
+        ></span>
+        <span
+          class="rose"
+          data-color="#e74c3c"
+          data-pic="url(shoes.png)"
+        ></span>
+      </div>
+
+      <div class="product-info">
+        <div class="product-price">$90</div>
+        <a href="" class="product-button">Add to Cart</a>
+      </div>
+    </div>
+    <script>
+      $(".product-colors span").click(function() {
+        $(".product-colors span").removeClass("active");
+        $(this).addClass("active");
+        $("body").css("background", $(this).attr("data-color"));
+        $(".product-price").css("color", $(this).attr("data-color"));
+        $(".product-button").css("color", $(this).attr("data-color"));
+        $(".product-pic").css("background-image", $(this).attr("data-pic"));
+      });
+    </script>
+  </body>
+</html>
